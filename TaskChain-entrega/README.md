@@ -1,62 +1,67 @@
 # TaskChain
 
-Aplicación descentralizada para administrar tareas en Solana Devnet.
+## Descripción
 
-## Funcionalidades del programa
-- Crear tareas asociadas a la wallet del usuario.
-- Guardar título, descripción y estado en una cuenta PDA.
-- Editar título y descripción mientras la tarea esté pendiente.
-- Marcar tareas como completadas.
-- Cerrar/eliminar únicamente tareas completadas.
-- Validar que solamente el propietario pueda modificar su tarea.
+TaskChain es una aplicación descentralizada de gestión de tareas desarrollada sobre la blockchain de Solana. Su propósito es permitir que los usuarios creen, consulten, editen, completen y eliminen sus tareas mediante un programa inteligente desarrollado con Rust y Anchor.
 
-## Tecnologías
-- Solana
-- Rust
-- Anchor
-- TypeScript para pruebas
-- Solana Playground para compilar y desplegar desde el navegador
+## Objetivo
 
-## Estado de esta entrega
-Este repositorio contiene el código fuente y la documentación base. **No afirma que el programa ya esté desplegado en Devnet.** Para completar esa evidencia se debe compilar, ejecutar las pruebas y desplegar desde Solana Playground. El saldo de SOL de prueba y los límites del faucet son externos al repositorio.
+Desarrollar una aplicación que utilice tecnología blockchain para gestionar tareas de manera descentralizada, segura y transparente.
 
-## Estructura
+## Tecnologías utilizadas
+
+- **Solana:** plataforma blockchain.
+- **Rust:** lenguaje utilizado para desarrollar el programa.
+- **Anchor:** framework para desarrollar programas en Solana.
+- **TypeScript:** lenguaje utilizado para las pruebas.
+- **Solana Playground:** entorno de desarrollo y compilación.
+
+## Funcionalidades
+
+1. **Crear tareas:** permite registrar una tarea con título y descripción.
+2. **Editar tareas:** permite modificar el título y la descripción.
+3. **Completar tareas:** permite cambiar el estado de una tarea a completada.
+4. **Eliminar tareas:** permite eliminar únicamente tareas que ya estén completadas.
+
+## Estructura del proyecto
+
 ```text
-TaskChain/
-├── Anchor.toml
-├── Cargo.toml
-├── README.md
+TaskChain-entrega/
 ├── programs/
 │   └── task_chain/
-│       ├── Cargo.toml
-│       └── src/
-│           └── lib.rs
-└── tests/
-    └── task_chain.ts
+│       ├── src/
+│       │   └── lib.rs
+│       └── Cargo.toml
+├── tests/
+│   └── task_chain.ts
+├── Anchor.toml
+├── Cargo.toml
+├── package.json
+└── tsconfig.json
 ```
 
-## Programa en Solana Playground
-El código principal está en `programs/task_chain/src/lib.rs`. En Solana Playground, el archivo equivalente es `src/lib.rs`.
+## Desarrollo y pruebas
 
-El identificador que aparece en `declare_id!` debe coincidir con el Program ID generado por el keypair del programa. No inventes ni copies el identificador de otra persona. Después de generar el keypair, actualiza `declare_id!` y `Anchor.toml` con el mismo valor.
+El programa fue desarrollado utilizando Rust y Anchor en Solana Playground.
 
-## Compilar y desplegar
-En Solana Playground:
-1. Abre el proyecto Anchor.
-2. Pega el contenido de `programs/task_chain/src/lib.rs` en `src/lib.rs`.
-3. Usa **Build** y revisa que termine correctamente.
-4. Selecciona **Devnet** y conecta la wallet de desarrollo.
-5. Cuando tengas SOL de prueba suficiente, usa **Deploy**.
-6. Guarda el Program ID y el enlace de la transacción/explorador como evidencia.
+La compilación del programa se realizó correctamente (`Build successful`).
 
-## Seguridad
-- Nunca publiques archivos de keypair, frases de recuperación, claves privadas ni credenciales.
-- No subas carpetas `target/`, `node_modules/` ni archivos `.env`.
-- Usa únicamente SOL de prueba en Devnet.
+Se prepararon pruebas para verificar las operaciones de creación, edición, finalización y eliminación de tareas.
 
-## Evidencias que faltan por agregar
-- Captura del Build exitoso.
-- Captura del resultado de las pruebas.
-- Program ID desplegado en Devnet.
-- Enlace de Solana Explorer a la transacción de despliegue.
-- Capturas de las operaciones crear, editar, completar y eliminar.
+**Estado de las pruebas:** las transacciones no pudieron completarse debido a que la wallet de Devnet no contaba con SOL de prueba suficiente.
+
+## Estado del proyecto
+
+- Código del programa: desarrollado.
+- Compilación: exitosa.
+- Pruebas: preparadas, pendientes de ejecución completa.
+- Despliegue en Solana Devnet: pendiente.
+- Interfaz web: pendiente de desarrollo e integración.
+
+## Identificador del programa
+
+```text
+C2P3ExfWbpq7scVKJXKxFWhwM8TAnQpDz5xMXJoNmUjK
+```
+
+Este identificador está configurado en el código fuente. El despliegue todavía está pendiente de realizarse en Dev
